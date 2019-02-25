@@ -1,0 +1,40 @@
+#各種ライブラリをインポートする
+import numpy as np
+import matplotlib.pyplot as plt
+from pandas import DataFrame
+from sklearn import linear_model
+%matplotlib inline
+
+#
+X=DataFrame([0,1,2,3,4,5])
+Y=DataFrame([3,2,5,7,6,10])
+
+#
+plt.scatter( X, Y, color='red')
+
+#
+model=linear_model.LinearRegression()
+
+#
+model.fit( X, Y )
+
+#
+tmp=np.arange( X.min(), X.max(), 0.01 )
+
+#
+px=tmp[ :, np.newaxis ]
+
+#
+py=model.predict(px)
+
+#
+plt.scatter( X, Y, color = 'red' )
+plt.plot( px, py, color = 'blue')
+
+#
+plt.title("Regression line")
+plt.show()
+
+#
+print("回帰係数：", model.coef_)
+print("切片：", model.intercept_)
