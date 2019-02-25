@@ -5,14 +5,14 @@ from pandas import DataFrame
 from sklearn import linear_model
 %matplotlib inline
 
-#
+#X軸とY軸のデータを用意
 X=DataFrame([0,1,2,3,4,5])
 Y=DataFrame([3,2,5,7,6,10])
 
-#
+#散布図をプロット
 plt.scatter( X, Y, color='red')
 
-#
+#作成したモデルに、XとYのデータを渡します。
 model=linear_model.LinearRegression()
 
 #
