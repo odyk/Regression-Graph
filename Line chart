@@ -27,14 +27,16 @@ px=tmp[ :, np.newaxis ]
 #
 py=model.predict(px)
 
-#
+#散布図をプロット
 plt.scatter( X, Y, color = 'red' )
+
+#青い線で回帰直線を引く
 plt.plot( px, py, color = 'blue')
 
-#
+#グラフにタイトルを描画
 plt.title("Regression line")
 plt.show()
 
-#
+#回帰係数と切片をそれぞれ表示
 print("回帰係数：", model.coef_)
 print("切片：", model.intercept_)
